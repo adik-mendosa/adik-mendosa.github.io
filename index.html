@@ -1,27 +1,12 @@
 <html>
 <body>
-<div id="smaatoad" style="padding: 0px"></div>
-
-<script id="smaatoAdDisplay" language="javascript" type="text/javascript" 
-src="http://soma.smaato.net/oapi/js/smaatoAdDisplay.js">
+<script type="text/javascript">
+mopub_ad_unit = "795d1916481d42178a5f347f8392d267";
+mopub_keywords = "Casino"; // optional
 </script>
-<script>
-(function() {
-var request = new SomaRequest();
-request.adSpaceID = 65827132;
-request.publisherID = 923877043;
-request.dimension = 'mma';
-request.iosadid = 
-/*insert additional targeting data here */
-SomaTag.requestAd(request);
-})();
 
-setTimeout(function () {
-  var elem = document.getElementsByTagName('div')[1].getElementsByTagName('img')[0];
+<script src="http://ads.mopub.com/js/client/mopub.js"></script>
+
   
-  alert('DIMENSIONS: '+elem.clientWidth + 'x' + elem.clientHeight);
-}, 5000);
-
-</script>
 </body>
 </html>
