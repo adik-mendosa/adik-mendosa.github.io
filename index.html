@@ -16,6 +16,12 @@ request.iosadid =
 SomaTag.requestAd(request);
 })();
 
+setTimeout(function () {
+  var elem = document.getElementsByTagName('div')[1].getElementsByTagName('center')[0];
+  
+  alert(elem.clientHeight);
+}, 5000);
+
 </script>
 </body>
 </html>
