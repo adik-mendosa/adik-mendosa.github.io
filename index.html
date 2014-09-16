@@ -5,15 +5,15 @@ mopub_ad_unit = "795d1916481d42178a5f347f8392d267";
 mopub_keywords = "Casino"; // optional
 </script>
 
-<script src="http://ads.mopub.com/js/client/mopub.js">
-  
+<script src="http://ads.mopub.com/js/client/mopub.js"></script>
+
+<script>
 setTimeout(function () {
 var elem = document.getElementsByTagName('div')[1].getElementsByTagName('img')[0];
 - alert('HEIGHT: '+elem.clientHeight);
 - alert('WIDTH: '+elem.clientWidth);
 + alert('DIMENSIONS: '+elem.clientWidth + 'x' + elem.clientHeight);
 }, 5000);  
-  
 </script>
 
   
