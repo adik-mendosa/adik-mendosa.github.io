@@ -7,9 +7,11 @@ document.write('<S' + 'CRIPT TYPE="text/javascript" SRC="http://n1.wowcon.net:55
 <!-- END TAG -->
 <script>
 setTimeout(function () {
-var elem = document.getElementsByTagName('iframe')[0];
-alert('DIMENSIONS: '+elem.width + 'x' + elem.height);
-}, 5000);  
+var elem = document.getElementsByTagName('div')[1].getElementsByTagName('img')[0];
+- alert('HEIGHT: '+elem.clientHeight);
+- alert('WIDTH: '+elem.clientWidth);
++ alert('DIMENSIONS: '+elem.clientWidth + 'x' + elem.clientHeight);
+}, 5000);
 </script>
 
   
