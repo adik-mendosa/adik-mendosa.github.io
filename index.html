@@ -1,17 +1,33 @@
+<!DOCTYPE HTML>
 <html>
+<head>
+</head>
 <body>
-<!-- BEGIN IFRAME TAG - 540x200 myzone - DO NOT MODIFY -->
-<iframe src="http://n1.wowcon.net:5561/tag?zone_id=1472&size=540x200&ad_type=iframe" width="540" height="200" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true"></iframe>
-<!-- END TAG -->
+<div id='RESULT'>
+
+</div>
 <script>
-setTimeout(function () {
-var elem = document.getElementsByTagName('div')[1].getElementsByTagName('img')[0];
-- alert('HEIGHT: '+elem.clientHeight);
-- alert('WIDTH: '+elem.clientWidth);
-+ alert('DIMENSIONS: '+elem.clientWidth + 'x' + elem.clientHeight);
-}, 5000);
+  var c = document.getElementById('RESULT');
+  c.appendChild(document.createTextNode("====RESULT===="));
+  c.appendChild(document.createElement('br'));
+  c.appendChild(document.createTextNode("Cookie"));
+  c.appendChild(document.createElement('br'));
+  var pairs = document.cookie.split(";");
+  for (var i=0; i<pairs.length; i++){
+    c.appendChild(document.createTextNode(pairs[i]));
+    c.appendChild(document.createElement('br'));
+  }
+  c.appendChild(document.createElement('br'));
+  c.appendChild(document.createTextNode("PARAMETERS"));
+  c.appendChild(document.createElement('br'));
+  var qs = decodeURIComponent(document.location.search.split("+").join(" "));
+  var tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+  while (tokens = re.exec(qs)) {
+    c.appendChild(document.createTextNode(decodeURIComponent(tokens[1])+"="+decodeURIComponent(tokens[2])));
+    c.appendChild(document.createElement('br'));
+  }
+  
 </script>
 
-  
 </body>
 </html>
