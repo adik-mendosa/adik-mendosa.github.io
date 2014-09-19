@@ -1,33 +1,10 @@
-<!DOCTYPE HTML>
 <html>
-<head>
-</head>
 <body>
-<div id='RESULT'>
-
-</div>
-<script>
-  var c = document.getElementById('RESULT');
-  c.appendChild(document.createTextNode("====RESULT===="));
-  c.appendChild(document.createElement('br'));
-  c.appendChild(document.createTextNode("Cookie"));
-  c.appendChild(document.createElement('br'));
-  var pairs = document.cookie.split(";");
-  for (var i=0; i<pairs.length; i++){
-    c.appendChild(document.createTextNode(pairs[i]));
-    c.appendChild(document.createElement('br'));
-  }
-  c.appendChild(document.createElement('br'));
-  c.appendChild(document.createTextNode("PARAMETERS"));
-  c.appendChild(document.createElement('br'));
-  var qs = decodeURIComponent(document.location.search.split("+").join(" "));
-  var tokens, re = /[?&]?([^=]+)=([^&]*)/g;
-  while (tokens = re.exec(qs)) {
-    c.appendChild(document.createTextNode(decodeURIComponent(tokens[1])+"="+decodeURIComponent(tokens[2])));
-    c.appendChild(document.createElement('br'));
-  }
-  
-</script>
-
+<!-- BEGIN JS TAG - 540x200 myzone - DO NOT MODIFY -->
+<SCRIPT TYPE="text/javascript">
+document.write('<S' + 'CRIPT TYPE="text/javascript" SRC="http://n1.wowcon.net:5561/tag?zone_id=1472&size=540x200&rnd=' + new Number(Math.floor(99999999 * Math.random())+1) + '"></S' + 'CRIPT>');
+</SCRIPT>
+<!-- END TAG -->
 </body>
 </html>
+
