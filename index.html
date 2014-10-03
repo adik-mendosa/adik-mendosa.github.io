@@ -10,5 +10,28 @@ alert('adkernel_script_injected');
 	aka("init", "4", "adik-mendosa.github.io");
 	aka("send", "pageview");
 </script>
+
+<script type="text/javascript">
+var x = [
+ 'document.body.clientHeight',
+ 'document.body.clientWidth',
+ 'document.body.offsetHeight',
+ 'document.body.offsetWidth',
+ 'screen.availHeight',
+ 'screen.availWidth',
+ 'screen.height',
+ 'screen.width',
+ 'window.innerHeight',
+ 'window.innerWidth',
+ 'window.orientation',
+ 'window.outerHeight',
+ 'window.outerWidth'
+];
+
+for (var i=0, l=x.length; i<l; i++) {
+ document.write(x[i] + ' ' + eval(x[i]) + '<br/>')
+}
+</script>
+
 </html>
 
