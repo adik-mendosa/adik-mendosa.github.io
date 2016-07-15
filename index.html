@@ -143,7 +143,16 @@ f.prototype.getLeadingId=f.prototype.o;f.prototype.getPseudoIds=f.prototype.s;f.
        * Handles the event that is dispatched after the Ad has been
        * initialized and before the default page of the Ad is shown.
        */
-      function handleAdInitialized(event) {}
+       function handleAdInitialized(event) {
+  var banner = document.getElementById('pagedeck');
+  var queryDict = {};
+  location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
+  var clickUrl = decodeURIComponent(queryDict.curl);
+  banner.style.cursor = 'pointer';
+  banner.addEventListener('click', function(){
+   window.open(clickUrl);
+  }, false);  
+   }
 
       window.addEventListener('DOMContentLoaded',
         handleDomContentLoaded, false);
