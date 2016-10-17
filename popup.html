@@ -1,6 +1,6 @@
 <html>
 <body>
-<p>Pop-up example</p>
+<p>Click to see pop-up</p>
 <script>
 function randomInteger(min, max) {
   var rand = min + Math.random() * (max - min)
@@ -9,7 +9,7 @@ function randomInteger(min, max) {
 }    
 function myFunction() {
     var myWindow = window.open("", "MsgWindow"+randomInteger(1,100), "width=800,height=800");
-myWindow.document.write("<p>click to see pop-up</p>");
+myWindow.document.write("<p>Pop-up example</p>");
 }
 document.onclick=myFunction
 </script>
