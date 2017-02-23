@@ -1,11 +1,35 @@
 <html>
 <head>
-    <title>Test</title>
 </head>
 <body>
-<a href="http://google.com">
-<script type="text/javascript" src="//go.pub2srv.com/apu.php?zoneid=1006367"></script>
-test link
-</a>
+
+<span class='adkernl_publisher_tag' id='random_id1'></span>
+<br>
+<br>
+<br>
+<br>
+<br>
+<span class='adkernl_publisher_tag' id='random_id2'></span>
+
+
+<script>
+window.adktags = window.adktags || [];
+window.adktags.push({
+    domain : 'rtb-as-staging.wowcon.net', 
+    data : [
+        {id : 'random_id1', zone :2, size : '300x250'},
+        {id : 'random_id2', zone :2, size : '728x90'}
+]});
+</script>
+<script src='//adkstatic.com/dsptag/pubtag.js' async></script>
+<script>
+window.adktags = window.adktags || [];
+window.adktags.push({
+    domain : 'rtb-as-staging.wowcon.net',
+    data : [
+        {zone :3}
+]});
+</script>
+<script src='//adkstatic.com/dsptag/pubtag.js' async></script>
 </body>
 </html>
