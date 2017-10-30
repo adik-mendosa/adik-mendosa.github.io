@@ -1,10 +1,47 @@
 <html>
 <head>
+    <script type="text/javascript" src="/prebid.js" async></script>
+
+    <script>
+        var pbjs = pbjs || {};
+        pbjs.que = pbjs.que || [];
+
+        pbjs.que.push(function() {
+            var adUnits = [{
+                code: 'container-1',
+                sizes: [[300, 250]],
+                bids: [{
+                    bidder: 'adkernel',
+                    params: {
+                        zoneId : '47495',
+                        host : 'rtb.kds.media'
+                    }
+                } ]
+            }];
+            pbjs.addAdUnits(adUnits);
+            pbjs.requestBids({
+                bidsBackHandler: function(bidResponses) {
+                    process('container-1');
+                }
+            });
+        });
+
+        function process(adUnit) {
+            var params = pbjs.getAdserverTargetingForAdUnitCode(adUnit);
+            if (params && 'hb_adid' in params) {
+                var bidResponses = pbjs.getBidResponsesForAdUnitCode(adUnit);
+                if (!bidResponses || bidResponses.bids.length == 0) return;
+                var ifrmEl = document.createElement('iframe');
+                document.getElementById(adUnit).appendChild(ifrmEl);
+                pbjs.renderAd(ifrmEl.contentDocument || ifrmEl.contentWindow.document, bidResponses.bids[0].adId);
+            }
+        }
+    </script>
+
 </head>
+
 <body>
-<iframe src="//cpm.bidrev.net/tag?zone_id=46125&size=0x0&ad_type=iframe" width="0" height="0" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true"></iframe>
-<!-- END TAG -->
+    <h2>Prebid.js Test</h2>
+    <div id="container-1"></div>
 </body>
 </html>
-
-
