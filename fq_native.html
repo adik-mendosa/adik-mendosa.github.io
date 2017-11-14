@@ -1,0 +1,44 @@
+<html>
+<head>
+<script type="text/javascript" src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+</head>
+<body>
+  <script type="text/javascript">
+request=
+{
+  "id": "4487159888663217854",
+  "imp": [ {
+    "id": "1",
+    "native": {
+      "request": "{\"native\": {\"plcmtcnt\": 5, \"assets\": [{\"id\": 1, \"title\": {\"len\": 25}},{\"id\": 2, \"data\": {\"type\": 2, \"len\": 35}},{\"id\": 3, \"data\": {\"type\": 10, \"len\": 35}},{\"id\": 4, \"data\": {\"type\": 11, \"len\": 35}},{\"id\": 5, \"img\": {\"w\": 50, \"h\": 50} } ] } }" 
+    }
+  }],
+  "site": {
+    "page": "http://test.com/page1?param=value"
+  },
+  "device": {
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.13 (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2",
+    "ip": "77.93.42.22" 
+  }
+};
+
+$.post( "http://rtb.media-servers.net/rtb?zone=47897",JSON.stringify(request))
+  .done(function( data ) {
+    resp = jQuery.parseJSON(data.seatbid[0].bid[0].adm);
+    title = resp.native.assets[0].title.text;
+    description = resp.native.assets[1].data.value;
+    displayURL = resp.native.assets[2].data.value;
+    clickURL = resp.native.link.url;
+    fqpixel = resp.native.imptrackers[0];
+    adkpixel = resp.native.imptrackers[1];
+    $('<div> Ad title: '+title+'</div>').appendTo('body');
+    $('</br>').appendTo('body');
+    $('<div> Ad desciption: '+description+'</div>').appendTo('body');
+    $('</br>').appendTo('body');
+    $('<div>Ad domain: '+displayURL+'</div>').appendTo('body');
+    $.get(fqpixel);
+    $.get(adkpixel);
+       },"json");
+</script>
+</body>
+</html>
