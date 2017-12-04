@@ -36,8 +36,7 @@ $.post( "https://rtb.media-servers.net/rtb?zone=47897",JSON.stringify(request))
     $('<div> Ad desciption: '+description+'</div>').appendTo('body');
     $('</br>').appendTo('body');
     $('<div>Ad domain: '+displayURL+'</div>').appendTo('body');
-    $.get(fqpixel);
-    $.get(adkpixel);
+    $('<img src='+fqpixel+'>').appendTo('body');
        },"json");
 </script>
 </body>
