@@ -22,7 +22,7 @@ request=
   }
 };
 
-$.post( "httpsrtb.media-servers.net/rtb?zone=47897",JSON.stringify(request))
+$.post( "https://rtb.media-servers.net/rtb?zone=47897",JSON.stringify(request))
   .done(function( data ) {
     resp = jQuery.parseJSON(data.seatbid[0].bid[0].adm);
     title = resp.native.assets[0].title.text;
