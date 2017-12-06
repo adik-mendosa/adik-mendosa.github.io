@@ -1,34 +1,15 @@
 <html>
-<head>
-<!--**** AdMovie JS Script (c) Playdigious 2017-->
-<script src="https://gist.github.com/bensojona/1030a67464e061568a5b.js"></script>
-
-<link type="text/css" href="https://static.adtrial.com/AdMovie/stylesheets/screen.css" rel="stylesheet" media="screen">
-
-<div id="banner">
-</div>
-
-<div id="div_video">
-</div>
-
-<div id="div_anim">
-</div>
-
-<div id="div_img">
-    </div>
-    <div id="div_loading_bar">
-    </div>
-    <div id="div_endingButton">
-    </div>
-    <div id="div_trailer">
-    </div>
-<div id="div_audio">
-</div>
-
+<head></head>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script>
-	var platform = "android";
-	var mraid_enabled = true;
+        $(document).ready(function (){
+         if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
+             window.location.href = 'http://sax.perfonspot.com/pops/dlink.php?pid=3709&format=POPUP&subid={subid}';
+         }
+         if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
+             window.location.href = 'http://sax.perfonspot.com/pops/dlink.php?pid=3709&format=POPUP&subid={subid}';
+         }
+        });
 </script>
-<script type="application/javascript" src="https://static.adtrial.com/AdMovie/taptica/admovie.taptica.js" crossorigin="anonymous"></script>
-</body>
+<body></body>
 </html>
