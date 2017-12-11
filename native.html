@@ -25,18 +25,20 @@ request=
 $.post( "http://rtb.adventurefeeds.com/rtb?zone=44883",JSON.stringify(request))
   .done(function( data ) {
     resp = jQuery.parseJSON(data.seatbid[0].bid[0].adm);
-    title = resp.native.assets[0].title.text;
-    description = resp.native.assets[1].data.value;
-    displayURL = resp.native.assets[2].data.value;
-    clickURL = resp.native.link.url;
-    fqpixel = resp.native.imptrackers[0];
-    adkpixel = resp.native.imptrackers[1];
-    $('<div> Ad title: '+title+'</div>').appendTo('body');
-    $('</br>').appendTo('body');
-    $('<div> Ad desciption: '+description+'</div>').appendTo('body');
-    $('</br>').appendTo('body');
+    //title = resp.native.assets[0].title.text;
+    //description = resp.native.assets[1].data.value;
+    displayURL = resp.native.assets[0].data.value;
+    //clickURL = resp.native.link.url;
+    //fqpixel = resp.native.imptrackers[0];
+    adkpixel = resp.native.imptrackers[0];
+    pxpixel = resp.native.imptrackers[1];
+    //$('<div> Ad title: '+title+'</div>').appendTo('body');
+    //$('</br>').appendTo('body');
+    //$('<div> Ad desciption: '+description+'</div>').appendTo('body');
+    //$('</br>').appendTo('body');
     $('<div>Ad domain: '+displayURL+'</div>').appendTo('body');
-    $('<img src='+fqpixel+'>').appendTo('body');
+    $('<img src='+adkpixel+'>').appendTo('body');
+    $('<img src='+pxpixel+'>').appendTo('body');
        },"json");
 </script>
 </body>
