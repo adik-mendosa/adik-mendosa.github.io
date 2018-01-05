@@ -27,8 +27,8 @@ $.post( "http://rtb.media-servers.net/rtb?zone=47897",JSON.stringify(request))
     resp = jQuery.parseJSON(data.seatbid[0].bid[0].adm);
     title = resp.native.assets[0].title.text;
     description = resp.native.assets[1].data.value;
-    alert(resp.native.assets);
-    displayURL = resp.native.assets[0].data.value;
+    alert(resp.native.assets[]);
+    displayURL = resp.native.assets[2].data.value;
     clickURL = resp.native.link.url;
     fqpixel = resp.native.imptrackers[0];
     //pxpixel = resp.native.imptrackers[0];
