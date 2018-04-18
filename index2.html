@@ -1,7 +1,60 @@
+<!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="//static-rtb.adkernel.com/pb/prebid.js" async></script>
+<script>
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+
+pbjs.que.push(function() {
+    var adUnits = [{
+        code: 'skyscraper1',
+        sizes: [
+            [300, 250]
+        ],
+        bids: [{
+            bidder: 'adkernelAdn',
+            params: {
+                pubId: 252,
+                host: 'dsp-staging2.adkernel.com'
+            }
+        }]
+    }];
+
+    pbjs.addAdUnits(adUnits);
+
+    pbjs.requestBids({
+        bidsBackHandler: function(bidResponses) {
+            for (var adUnitName in bidResponses) {
+                if (bidResponses.hasOwnProperty(adUnitName)) {
+                    process(adUnitName);
+                }
+            }
+        }
+    });
+});
+
+function process(adUnit) {
+    var bidResponses = pbjs.getHighestCpmBids(adUnit);
+    if (bidResponses.length == 0)
+        return;
+    var ifrmEl = document.createElement('iframe');
+    ifrmEl.scrolling = 'no'
+    document.getElementById(adUnit).appendChild(ifrmEl);
+    pbjs.renderAd(ifrmEl.contentDocument || ifrmEl.contentWindow.document, bidResponses[0].adId);
+}
+</script>
 </head>
 <body>
-<script language="JavaScript1.1" src="https://wannang.net/morgandetoi/fr.html?vetementsi=1&site_id=777&domain=test.com&publisher_id=555&app_name=&device_type=mobile&exchange=3"></script>
+ With billions of people on the planet, disposing of sewage waste is a major problem. According to 2015 and 2016 figures from the World Health Organization, some 663 million people (9 percent of the world's population) don't have access to safe drinking water, while 2.4 billion (40 percent of the world's population) don't have proper sanitation (hygienic toilet facilities); although there have been great improvements in securing access to clean water, relatively little progress has been made on improving global sanitation in the last decade. Sewage disposal affects people's immediate environments and leads to water-related illnesses such as diarrhea that kills 525,000 children under five each year. [3] (Back in 2002, the World Health Organization estimated that water-related diseases could kill as many as 135 million people by 2020.) In developed countries, most people have flush toilets that take sewage waste quickly and hygienically away from their homes.
+
+Yet the problem of sewage disposal does not end there. When you flush the toilet, the waste has to go somewhere and, even after it leaves the sewage treatment works, there is still waste to dispose of. Sometimes sewage waste is pumped untreated into the sea. Until the early 1990s, around 5 million tons of sewage was dumped by barge from New York City each year. [4] According to 2002 figures from the UK government's Department for the Environment, Food, and Rural Affairs (DEFRA), the sewers of Britain collect around 11 billion liters of waste water every day, some of it still pumped untreated into the sea through long pipes. [5] The New River that crosses the border from Mexico into California once carried with it 20–25 million gallons (76–95 million liters) of raw sewage each day; a new waste water plant on the US-Mexico border, completed in 2007, substantially solved that problem. [6] Unfortunately, even in some of the richest nations, the practice of dumping sewage into the sea continues. In early 2012, it was reported that the tiny island of Guernsey (between Britain and France) has decided to continue dumping 16,000 tons of raw sewage into the sea each day.
+
+In theory, sewage is a completely natural substance that should be broken down harmlessly in the environment: 90 percent of sewage is water. [7] In practice, sewage contains all kinds of other chemicals, from the pharmaceutical drugs people take to the paper, plastic, and other wastes they flush down their toilets. When people are sick with viruses, the sewage they produce carries those viruses into the environment. It is possible to catch illnesses such as hepatitis, typhoid, and cholera from river and sea water.
+
+ A few statistics illustrate the scale of the problem that waste water (chemicals washed down drains and discharged from factories) can cause. Around half of all ocean pollution is caused by sewage and waste water. Each year, the world generates perhaps 5–10 billion tons of industrial waste, much of which is pumped untreated into rivers, oceans, and other waterways. [8] In the United States alone, around 400,000 factories take clean water from rivers, and many pump polluted waters back in their place. However, there have been major improvements in waste water treatment recently. Since 1970, in the United States, the Environmental Protection Agency (EPA) has invested about $70 billion in improving water treatment plants that, as of 2015, serve around 88 percent of the US population (compared to just 69 percent in 1972). However, another $271 billion is still needed to update and upgrade the system.[15]
+
+Factories are point sources of water pollution, but quite a lot of water is polluted by ordinary people from nonpoint sources; this is how ordinary water becomes waste water in the first place. Virtually everyone pours chemicals of one sort or another down their drains or toilets. Even detergents used in washing machines and dishwashers eventually end up in our rivers and oceans. So do the pesticides we use on our gardens. A lot of toxic pollution also enters waste water from highway runoff. Highways are typically covered with a cocktail of toxic chemicals—everything from spilled fuel and brake fluids to bits of worn tires (themselves made from chemical additives) and exhaust emissions. When it rains, these chemicals wash into drains and rivers. It is not unusual for heavy summer rainstorms to wash toxic chemicals into rivers in such concentrations that they kill large numbers of fish overnight. It has been estimated that, in one year, the highway runoff from a single large city leaks as much oil into our water environment as a typical tanker spill. Some highway runoff runs away into drains; others can pollute groundwater or accumulate in the land next to a road, making it increasingly toxic as the years go by.  
+<div id="skyscraper1"></div>
 </body>
 </html>
