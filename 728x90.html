@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", helvetica, arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .ad_container {
+            width: 728px;
+            height: 90px;
+            padding: 0px 20px;
+            background: no-repeat center;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        .ad_container_title {
+            height: 18px;
+        }
+
+        .ad_container_title-text {
+            margin: 0;
+            color: #ffc600;
+        }
+
+        .ad_container_listContainer {
+            font-size: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .ad_container_listContainer_list {
+            margin: 0;
+            list-style: none;
+            font-size: 14px;
+            padding: 0;
+            border-left: 2px solid white;
+        }
+
+        .ad_container_listContainer_list-item {
+            padding: 1.5px 0;
+            position: relative;
+            line-height: 18px;
+            position: relative;
+            transition: background-color .2s linear;
+        }
+
+        .ad_container_listContainer_list-link:after {
+            content: '>';
+            position: absolute;
+            right: 10px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            width: 8px;
+            height: 17px;
+            color: white;
+            transition: color .2s linear;
+        }
+
+        .ad_container_listContainer_list-item:hover .ad_container_listContainer_list-link:after {
+            color: black;
+        }
+
+        .ad_container_listContainer_list-item:hover {
+            background-color: #ffc600;
+        }
+
+        .ad_container_listContainer_list-item:hover .ad_container_listContainer_list-link {
+            color: black;
+        }
+
+        .ad_container_listContainer_list-item:hover .ad_container_listContainer_list-number {
+            background-color: white;
+            color: #ffc600;
+        }
+
+        .ad_container_listContainer_list-item:nth-of-type(2) {
+            margin: 2px 0;
+        }
+
+        .ad_container_listContainer_list-link {
+            display: flex;
+            padding: 0 30px 0 10px;
+            width: 100%;
+            color: white;
+            transition: color .2s linear;
+            align-items: center;
+        }
+
+        .ad_container_listContainer_list:nth-of-type(1) {
+            margin-right: 15px;
+        }
+
+        .ad_container_listContainer_list-number {
+            width: 18px;
+            text-align: center;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            background-color: #ffc600;
+            margin-right: 5px;
+            color: white;
+            font-size: 13px;
+            transition: color .2s linear, background-color .2s linear;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+</head>
+<body>
+<div class="ad_container" id="container">
+    <div class="ad_container_title">
+        <h5 class="ad_container_title-text" id="title"></h5>
+    </div>
+    <div class="ad_container_listContainer">
+        <ul class="ad_container_listContainer_list">
+            <li class="ad_container_listContainer_list-item"><a target="_blank" class="ad_container_listContainer_list-link"><span class="ad_container_listContainer_list-number">1</span></a></li>
+            <li class="ad_container_listContainer_list-item"><a target="_blank" class="ad_container_listContainer_list-link"><span class="ad_container_listContainer_list-number">2</span></a></li>
+            <li class="ad_container_listContainer_list-item"><a target="_blank" class="ad_container_listContainer_list-link"><span class="ad_container_listContainer_list-number">3</span></a></li>
+        </ul>
+        <ul class="ad_container_listContainer_list">
+            <li class="ad_container_listContainer_list-item"><a target="_blank" class="ad_container_listContainer_list-link"><span class="ad_container_listContainer_list-number">4</span></a></li>
+            <li class="ad_container_listContainer_list-item"><a target="_blank" class="ad_container_listContainer_list-link"><span class="ad_container_listContainer_list-number">5</span></a></li>
+            <li class="ad_container_listContainer_list-item"><a target="_blank" class="ad_container_listContainer_list-link"><span class="ad_container_listContainer_list-number">6</span></a></li>
+        </ul>
+    </div>
+</div>
+<script>
+    var title, linkList, container
+    ads = {
+        title: 'Lorem ipsum dolor sit amet',
+        linkList: [
+            {text: 'Lorem ipsum dolor sit amet ', url: 'https://www.google.com.ua'},
+            {text: 'Consectetur adipiscing elit', url: 'https://www.google.com.ua'},
+            {text: 'Sed do eiusmod tempor incididunt ut', url: 'https://www.google.com.ua'},
+            {text: 'Ut enim ad minim veniam', url: 'https://www.google.com.ua'},
+            {text: 'Quis nostrud exercitation ullamco', url: 'https://www.google.com.ua'},
+            {text: 'Nisi ut aliquip ex ea commodo consequat', url: 'https://www.google.com.ua'}
+        ],
+    };
+
+    title = document.getElementById('title');
+    container = document.getElementById('container');
+    linkList = document.getElementsByClassName('ad_container_listContainer_list-link');
+    linkList =  Array.from(linkList);
+    for ([index, link] of linkList.entries()) {
+        link.href = ads.linkList[index].url;
+        link.innerHTML = link.innerHTML + ads.linkList[index].text;
+    }
+
+    title.innerHTML = ads.title;
+
+    container.style.backgroundImage = "url('http://www.info-apareco.com/wp-content/uploads/2016/08/bg-tech.jpg')";
+
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", helvetica, arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .ad_container {
+            width: 300px;
+            height: 250px;
+            padding: 30px 20px;
+            background: no-repeat center;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        .ad_container_title {
+            width: 220px;
+            margin-bottom: 15px;
+        }
+
+        .ad_container_title-text {
+            color: #ffc600;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 36px;
+            transition: color .2s linear;
+        }
+
+        .ad_container_title-text:hover, .ad_container_description-text:hover {
+            color: white;
+        }
+
+        .ad_container_description {
+            width: 200px;
+            margin-bottom: 30px;
+        }
+
+        .ad_container_description-text {
+            color: #ddc;
+            line-height: 18px;
+            transition: color .2s linear;
+        }
+
+        .ad_container-button {
+            color: white;
+            background: #ffc600;
+            padding: 10px 20px;
+            width: 200px;
+            height: 50px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            transition: color .2s linear, background .2s linear;
+        }
+
+        .ad_container-button:hover {
+            color: black;
+            background: #ddc;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+</head>
+<body>
+    <div class="ad_container" id="container">
+        <div class="ad_container_title">
+            <a class="ad_container_title-text" target="_blank" id="title"></a>
+        </div>
+        <div class="ad_container_description">
+            <a class="ad_container_description-text" target="_blank" id="description"></a>
+        </div>
+        <a class="ad_container-button" target="_blank" id="buttonLink"></a>
+    </div>
+    <script>
+        var title, description, button, adContainer
+            ads = {
+                title: 'Get Alerts That Matter',
+                description: 'The most interesting alerts are just a click away!',
+                buttonText: 'Learn More',
+                adWebSite: 'https://www.google.com.ua',
+                imageURL: "url('https://desktopwalls.net/wp-content/uploads/2014/06/Gray%20Blue%20Metal%20Scratches%20Surface%20Texture%20Free%20Wallpaper%20HD-300x250.jpeg')"
+            };
+        title = document.getElementById('title');
+        description = document.getElementById('description');
+        button = document.getElementById('buttonLink');
+        adContainer = document.getElementById('container');
+
+        title.innerHTML = ads.title;
+        title.href = ads.adWebSite;
+        description.innerHTML = ads.description;
+        description.href = ads.adWebSite;
+        button.innerHTML = ads.buttonText;
+        button.href = ads.adWebSite;
+        adContainer.style.backgroundImage = ads.imageURL;
+    </script>
+</body>
+</html>
